@@ -30,15 +30,21 @@ if (var %% 2 == 0){
 
 num = as.integer(readline('Enter a number : '))
 flag = 0
-for(i in 1:num){
-    if ((num %% i) == 0) {
-      flag = flag + 1
+if(num>1){
+  flag=1
+  for(i in 2:(num-1)){
+    if(num%%i==0){
+      flag=0
+      break
+     }
+    }
   }
-}
-
-if(flag == 2) {
-  print(paste(num,'is a prime number'))
-} else {
-  print(paste(num,'is not a prime number'))
-}
+if(num==2){
+  flag=1
+  }
+if(flag==1){
+  print("It is a Prime Number")
+  }else{
+  print("Not a prime Number")
+  }
 
